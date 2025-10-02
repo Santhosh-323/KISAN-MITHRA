@@ -1,0 +1,232 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: radial-gradient(circle at top left, #1B1B1B, #000000);
+  color: #F5F5F5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 960px;
+  padding: 20px;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 200, 83, 0.3);
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(0, 200, 83, 0.2);
+  padding: 30px;
+  animation: fadeIn 0.6s ease;
+}
+
+h1 {
+  font-size: 30px;
+  color: #00C853;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 16px;
+  color: #B0BEC5;
+  margin-bottom: 20px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.input-group {
+  background: linear-gradient(135deg, #263238, #37474F);
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 4px 12px rgba(0, 200, 83, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.input-group:hover {
+  transform: scale(1.02);
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: bold;
+  color: #AEEA00;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #00C853;
+  background-color: #263238;
+  color: #F5F5F5;
+  font-size: 15px;
+}
+
+input:focus {
+  outline: none;
+  border-color: #AEEA00;
+  box-shadow: 0 0 0 3px rgba(174, 234, 0, 0.3);
+}
+
+button {
+  background: linear-gradient(135deg, #00B8D4, #AEEA00);
+  color: #000;
+  padding: 14px 24px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-position 0.5s ease, transform 0.2s ease;
+  background-size: 200% 200%;
+  margin-top: 20px;
+}
+
+button:hover {
+  background-position: right center;
+  transform: scale(1.03);
+}
+
+.dashboard-card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 200, 83, 0.2);
+  border-radius: 20px;
+  box-shadow: 0 0 40px rgba(0, 200, 83, 0.2);
+  padding: 30px;
+}
+
+.stats-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.stat-box {
+  flex: 1 1 200px;
+  min-width: 180px;
+  background: linear-gradient(135deg, #00C853, #AEEA00);
+  color: #000;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.stat-box:hover {
+  transform: scale(1.05);
+}
+
+.stat-title {
+  font-size: 1.1em;
+  font-weight: bold;
+  color: #263238;
+  margin-bottom: 8px;
+}
+
+.stat-value {
+  font-size: 1.5em;
+  color: #1B1B1B;
+}
+
+#batteryBar, #progressContainer {
+  width: 100%;
+  background: #37474F;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top: 30px;
+}
+
+#batteryLevel, #progressBar {
+  height: 20px;
+  transition: width 0.5s ease;
+}
+
+#batteryLevel {
+  background: #00C853;
+}
+
+#progressBar {
+  background: linear-gradient(to right, #00C853, #AEEA00);
+  width: 0%;
+}
+
+#batteryText, #progressText {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #AEEA00;
+}
+
+.ai-card {
+  background: linear-gradient(135deg, #00B8D4, #AEEA00);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  margin-top: 30px;
+  color: #000;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+#mapContainer canvas {
+  border: 2px solid #00C853;
+  border-radius: 12px;
+  background-color: #263238;
+  max-width: 100%;
+  margin-top: 20px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 600px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+
+  p {
+    font-size: 14px;
+  }
+
+  input {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  button {
+    font-size: 15px;
+    padding: 12px 20px;
+  }
+
+  .card {
+    padding: 20px;
+    border-radius: 16px;
+  }
+
+  .stat-box {
+    min-width: 100%;
+  }
+
+  .ai-card {
+    font-size: 14px;
+    padding: 16px;
+  }
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kisan Mitra | Smart Planting</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="wrapper" id="inputView">
+    <div class="card">
+      <h1>🌾 Kisan Mitra</h1>
+      <p>Enter GPS coordinates of your field corners:</p>
+      <form id="gpsForm">
+        <div class="form-grid">
+          <div class="input-group">
+            <label>Top-Left</label>
+            <input type="text" id="coord1" placeholder="Latitude, Longitude" required />
+          </div>
+          <div class="input-group">
+            <label>Top-Right</label>
+            <input type="text" id="coord2" placeholder="Latitude, Longitude" required />
+          </div>
+          <div class="input-group">
+            <label>Bottom-Right</label>
+            <input type="text" id="coord3" placeholder="Latitude, Longitude" required />
+          </div>
+          <div class="input-group">
+            <label>Bottom-Left</label>
+            <input type="text" id="coord4" placeholder="Latitude, Longitude" required />
+          </div>
+        </div>
+        <button type="submit">🚀 Process Field</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="wrapper" id="dashboardView" style="display: none;">
+    <div class="card dashboard-card">
+      <h1>📊 Field Summary</h1>
+      <div id="fieldStats" class="stats-grid"></div>
+
+      <h2>🔋 Battery Status</h2>
+      <div id="batteryBar"><div id="batteryLevel"></div></div>
+      <p id="batteryText">Battery: 100%</p>
+
+      <h2>🌱 Planting Progress</h2>
+      <div id="progressContainer"><div id="progressBar"></div></div>
+      <p id="progressText">Planting in progress…</p>
+
+      <h2>🧠 AI Insights</h2>
+      <div id="aiInsights" class="ai-card"><p>Analyzing field data...</p></div>
+
+      <h2>🗺️ Field Map Preview</h2>
+      <button onclick="toggleMap()">🧭 Show Field Map</button>
+      <div id="mapContainer" style="display: none;">
+        <canvas id="fieldCanvas" width="300" height="300"></canvas>
+      </div>
+
+      <button onclick="goBack()">🔙 Back</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
